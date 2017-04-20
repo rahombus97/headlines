@@ -14,7 +14,7 @@ def homepage():
   r = requests.get(
       'https://www.parsehub.com/api/v2/projects/t3S06TF2VeSo/last_ready_run/data',
       params=params)
-  return render_template('headlines.html', headlines=json.loads(r.text)['Headlines'])
+  return render_template('index.html', headlines=json.loads(r.text)['Headlines'])
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
